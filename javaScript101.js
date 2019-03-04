@@ -22,23 +22,6 @@ function madlib(name, subject) {
 
 console.log(madlib("Anushka", "art"))
 
-# set the service level to tip_pct 
-service = service.lower()
-if service == "good":
-    tip = total * .2
-    print('%.2f' % tip)
-elif service == "fair":
-    tip = total * .15
-    print('%.2f' % tip)
-elif service == "bad":
-    tip = total * .1
-    print('$%.2f would be the tip.' % tip)
-
-#set total bill and divide among payers
-total_bill = total + tip
-people = float(input('How many people are paying? '))
-amt_per = total_bill / people
-print('$%.2f per person.' % amt_per)
 
 function tipAmount(billAmount, serviceLevel) {
     
@@ -67,3 +50,23 @@ function totalAmount(billAmount, serviceLevel) {
         console.log(total)
     }
 }
+totalAmount(100, "good")
+
+function splitAmount(billAmount, serviceLevel, numberOfPeople) {
+    if (serviceLevel === "good") {
+        let total = billAmount * .2 + billAmount
+        let perPerson = total / numberOfPeople
+        console.log(perPerson)
+    } else if (serviceLevel === "fair") {
+        let total = billAmount * .15 + billAmount
+        let perPerson = total / numberOfPeople
+        console.log(perPerson)
+        
+    } else if (serviceLevel === "poor") {
+        let tip = billAmount * .1 + billAmount
+        let perPerson = total / numberOfPeople
+        console.log(perPerson)
+        
+    }
+}
+splitAmount(100, "good", 5)
